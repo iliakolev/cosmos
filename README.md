@@ -7,13 +7,13 @@ Astronomy Picture of the Day clone build with React and [NASA API]
 ## Development
 
 ```
-$ npm run start
+$ npm start
 ```
 
 ## Deployment
 
 ```
-$ npm run build
+$ npm run deploy
 ```
 
 Will automatically deploy the site to https://iliakolev.github.io/cosmos/
