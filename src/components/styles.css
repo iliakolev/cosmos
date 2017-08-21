@@ -1,0 +1,17 @@
+.title {
+  margin: 24px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.figure {
+  margin: 0 0 24px;
+}
+
+.figure-link {
+  display: block;
+}
+
+.caption {
+  font-size: 12px;
+}
