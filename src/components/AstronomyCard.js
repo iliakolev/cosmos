@@ -1,7 +1,9 @@
 import React from "react";
+import Spinner from "./Spinner";
 
 const AstronomyCard = props => {
   const {
+    loading,
     title,
     url,
     hdurl,
@@ -36,29 +38,26 @@ const AstronomyCard = props => {
   };
 
   const renderCopyright = () =>
-    copyright
-      ? <figcaption className="caption">
-          Copyright: {copyright}
-        </figcaption>
-      : null;
+    copyright ? (
+      <figcaption className="caption">Copyright: {copyright}</figcaption>
+    ) : null;
 
-  return (
-    <div>
-      <h1 className="title">
-        {title}
-      </h1>
+  const renderContent = () =>
+    loading ? (
+      <Spinner />
+    ) : (
+      <div className="container">
+        <h1 className="title">{title}</h1>
+        <figure className="figure">
+          {renderMedia()}
+          {renderCopyright()}
+        </figure>
+        <p>{explanation}</p>
+        {date}
+      </div>
+    );
 
-      <figure className="figure">
-        {renderMedia()}
-        {renderCopyright()}
-      </figure>
-
-      <p>
-        {explanation}
-      </p>
-      {date}
-    </div>
-  );
+  return renderContent();
 };
 
 export default AstronomyCard;

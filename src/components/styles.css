@@ -1,3 +1,16 @@
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 24px;
+  max-width: 75ch;
+}
+
 .title {
   margin: 24px 0;
   font-size: 24px;

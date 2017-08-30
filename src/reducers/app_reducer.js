@@ -1,8 +1,11 @@
-export default (state = {}, action) => {
+const initialState = {
+  loading: true
+};
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_DATA": {
-      const newState = Object.assign({}, ...state, action.payload.data);
-      return newState;
+      return Object.assign({}, state, action.payload.data, { loading: false });
     }
     default: {
       return state;
