@@ -11,10 +11,28 @@
   max-width: 75ch;
 }
 
+.header {
+  margin-bottom: 24px;
+}
+
 .title {
-  margin: 24px 0;
+  margin: 0;
   font-size: 24px;
   font-weight: bold;
+  line-height: 1.35;
+}
+
+.meta {
+  display: flex;
+  font-size: 14px;
+}
+
+.author {
+  margin-right: 8px;
+}
+
+.date {
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .figure {
@@ -23,8 +41,4 @@
 
 .figure-link {
   display: block;
-}
-
-.caption {
-  font-size: 12px;
 }

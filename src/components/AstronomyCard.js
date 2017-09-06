@@ -1,4 +1,5 @@
 import React from "react";
+import format from "date-fns/format";
 import Spinner from "./Spinner";
 
 const AstronomyCard = props => {
@@ -12,6 +13,23 @@ const AstronomyCard = props => {
     copyright,
     media_type
   } = props.data;
+
+  const renderAuthor = () =>
+    copyright ? <div className="author">{copyright}</div> : null;
+
+  const renderMeta = () => (
+    <div className="meta">
+      {renderAuthor()}
+      <time className="date">{format(date, "MMM D, YYYY")}</time>
+    </div>
+  );
+
+  const renderHeader = () => (
+    <div className="header">
+      <h1 className="title">{title}</h1>
+      {renderMeta()}
+    </div>
+  );
 
   const renderMedia = () => {
     switch (media_type) {
@@ -37,23 +55,14 @@ const AstronomyCard = props => {
     }
   };
 
-  const renderCopyright = () =>
-    copyright ? (
-      <figcaption className="caption">Copyright: {copyright}</figcaption>
-    ) : null;
-
   const renderContent = () =>
     loading ? (
       <Spinner />
     ) : (
       <div className="container">
-        <h1 className="title">{title}</h1>
-        <figure className="figure">
-          {renderMedia()}
-          {renderCopyright()}
-        </figure>
+        {renderHeader()}
+        <figure className="figure">{renderMedia()}</figure>
         <p>{explanation}</p>
-        {date}
       </div>
     );
 
